@@ -35,7 +35,7 @@ export default class SortingApp extends React.Component {
   // Generates random bars
   resetArray() {
     const array = []
-    for(let i = 0; i < 100; i++) { array.push(randomNumber(5, 1000)) }
+    for(let i = 0; i < 500; i++) { array.push(randomNumber(5, 500)) }
     this.setState({ array })
   }
 
@@ -44,13 +44,15 @@ export default class SortingApp extends React.Component {
     const { array } = this.state
 
     return(
-      <>
+      <div className="container">
       {array.map((value, index) => (
-        <div className="bar" key={index}>
-          {value}
-        </div>
+        <div
+        className="bar"
+        key={index}
+        style={{height:`${value}px`}}
+        ></div>
       ))}
-      </>
+      </div>
     )
   }
 }
