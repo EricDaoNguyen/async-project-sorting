@@ -7,6 +7,11 @@
   background-color: #3A3B3C;
 }
 
+.introduction {
+  position: absolute;
+  top: 20%;
+}
+
 .buttons {
   display: flex;
   flex-direction: column;
@@ -14,94 +19,94 @@
 
 .buttonOne {
   background-color: #f14e4e;
-  display:inline-block;
-  padding:0.3em 1.2em;
-  margin:0 0.1em 0.1em 0;
-  border:0.16em solid rgba(255,255,255,0);
-  border-radius:0.50em;
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  border-radius: 0.50em;
   box-sizing: border-box;
-  text-decoration:none;
-  font-family:'Roboto',sans-serif;
-  font-weight:500;
-  color:#FFFFFF;
-  text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
-  text-align:center;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+  text-align: center;
   transition: all 0.2s;
 }
 
 .buttonTwo {
   background-color: #f1bb4e;
-  display:inline-block;
-  padding:0.3em 1.2em;
-  margin:0 0.1em 0.1em 0;
-  border:0.16em solid rgba(255,255,255,0);
-  border-radius:0.50em;
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  border-radius: 0.50em;
   box-sizing: border-box;
-  text-decoration:none;
-  font-family:'Roboto',sans-serif;
-  font-weight:500;
-  color:#FFFFFF;
-  text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
-  text-align:center;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+  text-align: center;
   transition: all 0.2s;
 }
 
 .subButton {
   background-color: #9a4ef1;
-  display:inline-block;
-  padding:0.3em 1.2em;
-  margin:0 0.1em 0.1em 0;
-  border:0.16em solid rgba(255,255,255,0);
-  border-radius:0.50em;
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  border-radius: 0.50em;
   box-sizing: border-box;
-  text-decoration:none;
-  font-family:'Roboto',sans-serif;
-  font-weight:500;
-  color:#FFFFFF;
-  text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
-  text-align:center;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+  text-align: center;
   transition: all 0.2s;
 }
 
 .buttonOne:hover, .buttonTwo:hover, .subButton:hover {
-  border-color: rgba(255,255,255,1);
+  border-color: rgba(255, 255, 255, 1);
 }
 
 .menu {
   background-color: #4e9af1;
-  display:inline-block;
-  padding:0.3em 1.2em;
-  margin:0 0.1em 0.1em 0;
-  border:0.16em solid rgba(255,255,255,0);
-  border-radius:0.50em;
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  border-radius: 0.50em;
   box-sizing: border-box;
-  text-decoration:none;
-  font-family:'Roboto',sans-serif;
-  font-weight:500;
-  color:#FFFFFF;
-  text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
-  text-align:center;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+  text-align: center;
   transition: all 0.2s;
 }
 
 .menu:hover {
-  border-color: rgba(255,255,255,1);
+  border-color: rgba(255, 255, 255, 1);
 }
 
 .menu-list {
   background-color: #a8a8a881;
-  display:inline-block;
-  padding:0.3em 1.2em;
-  margin:0 0.1em 0.1em 0;
-  border:0.16em solid rgba(255,255,255,0);
-  border-radius:0.50em;
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  border-radius: 0.50em;
   box-sizing: border-box;
-  text-decoration:none;
-  font-family:'Roboto',sans-serif;
-  font-weight:500;
-  color:#FFFFFF;
-  text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
-  text-align:center;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+  text-align: center;
   transition: all 0.2s;
 }
 

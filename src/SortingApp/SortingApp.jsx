@@ -1,22 +1,8 @@
 import React from 'react'
 import Popup from 'reactjs-popup'
+import TypeWriterEffect from 'react-typewriter-effect'
 import './style.css'
-import { mergeSort } from '../SortingAlgorithms/sortingAlgorithms'
-
-/* ------------------------------------------------------------ */
-
-// Animation speed in milliseconds
-// const ANIMATION_SPEED = 1
-
-// Number of bars
-// const NUMBER_OF_BARS = 100
-
-// Primary = Main color of the bars
-// Secondary = Color of the bars that're being compared to
-// const PRIMARY_COLOR = 'green'
-// const SECONDARY_COLOR = 'red'
-
-/* ------------------------------------------------------------ */
+import { mergeSortAnimation } from '../SortingAlgorithms/mergeSort'
 
 // randomNumber function
 // Generates randomly between two numbers
@@ -24,6 +10,7 @@ function randomNumber(minimum, maximum) {
   return Math.floor(Math.random() * (maximum - minimum + 1) + minimum)
 }
 
+// CURRENTLY BROKEN!
 // areEqual function
 // Checks to see if both arrays are the same length
 function areEqual(arrayOne, arrayTwo) {
@@ -53,8 +40,10 @@ export default class SortingApp extends React.Component {
     this.setState({ array })
   }
 
+  // CURRENTLY BROKEN!
   // testAlgorithm method
   // Tests an algorithm 50 times to check if both the initial and post-sort arrays are the same
+  // Currently only testing mergeSort
   testAlgorithm() {
     for(let i = 0; i < 50; i++) {
       const array = []
@@ -64,13 +53,41 @@ export default class SortingApp extends React.Component {
     const generatedArray = this.state.array
     .slice()
     .sort((a, b) => a - b)
-    const sortedArray = mergeSort(this.state.array)
+    const sortedArray = mergeSortAnimation(this.state.array)
 
     return window.alert(areEqual(generatedArray, sortedArray))
   }
 
   // mergeSort method
-  // mergeSort() {}
+  // Changes color between green and red per bar
+  // Green = Done
+  // Red = Comparison in progress
+  mergeSort() {
+    const animation = mergeSortAnimation(this.state.array)
+    for (let i = 0; i < animation.length; i++) {
+      const bar = document.getElementsByClassName('bar')
+      const colorChange = i % 3 !== 2
+
+      if(colorChange) {
+        const [barOneIndex, barTwoIndex] = animation[i]
+        const barOne = bar[barOneIndex].style
+        const barTwo = bar[barTwoIndex].style
+        const color = i % 3 === 0 ? '#ff1818' : '#26D701'
+
+        setTimeout(() => {
+          barOne.backgroundColor = color
+          barTwo.backgroundColor = color
+        }, i * 10)
+
+      } else {
+        setTimeout(() => {
+          const [barOneIndex, newHeight] = animation[i]
+          const barOne = bar[barOneIndex].style
+          barOne.height = `${newHeight}px`
+        }, i * 10)
+      }
+    }
+  }
 
   // bubbleSort method
 
@@ -81,9 +98,30 @@ export default class SortingApp extends React.Component {
     return(
       <div className="container">
 
+        <div className="introduction">
+          <TypeWriterEffect
+          textStyle={{
+            fontFamily: 'Times New Roman',
+            color: '#FFFFFF',
+            fontWeight: 500,
+            fontSize: '3em',
+          }}
+          startDelay={1000}
+          cursorColor="#FFFFFF"
+          multiText={[
+            'Hi there!',
+            'My name is Eric.',
+            'Welcome to my sorting application!',
+            'I hope you enjoy!'
+          ]}
+          nextTextDelay={1000}
+          typeSpeed={100}
+          />
+        </div>
+
         <div className="buttons">
           <button className="buttonOne" onClick={() => this.resetArray()}>Generate New Bars</button>
-          <button className="buttonTwo" onClick={() => this.testAlgorithm()}>Test Algorithm</button>
+          <button className="buttonTwo" onClick={() => this.testAlgorithm()}>Test Algorithm</button> {/* BROKEN */}
           <Popup
           trigger={<div className="menu">Sorting Algorithms</div>}
           position="right top"
@@ -96,11 +134,8 @@ export default class SortingApp extends React.Component {
           >
             <div className="menu-list">
               <button className="subButton" onClick={() => this.mergeSort()}>Merge Sort</button>
-              <button className="subButton" onClick={() => this.bubbleSort()}>Bubble Sort</button>
             </div>
           </Popup>
-
-
         </div>
 
         {array.map((value, index) => (
