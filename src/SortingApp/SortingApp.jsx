@@ -6,9 +6,7 @@ import { mergeSortAnimation } from '../SortingAlgorithms/mergeSort'
 
 // randomNumber function
 // Generates randomly between two numbers
-function randomNumber(minimum, maximum) {
-  return Math.floor(Math.random() * (maximum - minimum + 1) + minimum)
-}
+function randomNumber(minimum, maximum) { return Math.floor(Math.random() * (maximum - minimum + 1) + minimum) }
 
 // CURRENTLY BROKEN!
 // areEqual function
@@ -54,7 +52,6 @@ export default class SortingApp extends React.Component {
     .slice()
     .sort((a, b) => a - b)
     const sortedArray = mergeSortAnimation(this.state.array)
-
     return window.alert(areEqual(generatedArray, sortedArray))
   }
 
@@ -67,18 +64,15 @@ export default class SortingApp extends React.Component {
     for (let i = 0; i < animation.length; i++) {
       const bar = document.getElementsByClassName('bar')
       const colorChange = i % 3 !== 2
-
       if(colorChange) {
         const [barOneIndex, barTwoIndex] = animation[i]
         const barOne = bar[barOneIndex].style
         const barTwo = bar[barTwoIndex].style
         const color = i % 3 === 0 ? '#ff1818' : '#26D701'
-
         setTimeout(() => {
           barOne.backgroundColor = color
           barTwo.backgroundColor = color
         }, i * 10)
-
       } else {
         setTimeout(() => {
           const [barOneIndex, newHeight] = animation[i]
@@ -86,18 +80,15 @@ export default class SortingApp extends React.Component {
           barOne.height = `${newHeight}px`
         }, i * 10)
       }
-    }
-  }
+    }}
 
   // bubbleSort method
 
   // Renders from JSX to HTML
   render() {
     const { array } = this.state
-
     return(
       <div className="container">
-
         <div className="introduction">
           <TypeWriterEffect
           textStyle={{
@@ -118,7 +109,6 @@ export default class SortingApp extends React.Component {
           typeSpeed={100}
           />
         </div>
-
         <div className="buttons">
           <button className="buttonOne" onClick={() => this.resetArray()}>Generate New Bars</button>
           <button className="buttonTwo" onClick={() => this.testAlgorithm()}>Test Algorithm</button> {/* BROKEN */}
@@ -137,7 +127,6 @@ export default class SortingApp extends React.Component {
             </div>
           </Popup>
         </div>
-
         {array.map((value, index) => (
           <div
           className="bar"
@@ -145,8 +134,5 @@ export default class SortingApp extends React.Component {
           style={{height:`${value}px`}}
           ></div>
         ))}
-
       </div>
-    )
-  }
-}
+    )}}
