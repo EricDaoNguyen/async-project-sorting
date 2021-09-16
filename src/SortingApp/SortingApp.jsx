@@ -68,7 +68,7 @@ export default class SortingApp extends React.Component {
         const [barOneIndex, barTwoIndex] = animation[i]
         const barOne = bar[barOneIndex].style
         const barTwo = bar[barTwoIndex].style
-        const color = i % 3 === 0 ? '#ff1818' : '#26D701'
+        const color = i % 3 === 0 ? '#FF0000' : '#26D701'
         setTimeout(() => {
           barOne.backgroundColor = color
           barTwo.backgroundColor = color
